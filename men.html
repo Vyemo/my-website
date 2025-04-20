@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Clothing - HeineKrest</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Consolidated CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            color: #000000;
+        }
+
+        /* Header Styling */
+        header {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center; /* Center the logo */
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+/* Center the logo absolutely */
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 36px;
+    font-family: 'Chomsky', serif;
+    font-weight: normal;
+    letter-spacing: -1px;
+    z-index: 1001; /* Ensure it stays above nav */
+}
+
+/* Position the nav list to the top right */
+nav {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+nav ul li a:hover {
+    color: #ccc;
+}
+        .hero {
+            text-align: center;
+            padding: 50px;
+            background-color: #ddd;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            color: #000; /* Makes h1 black */
+        }
+        .hero p {
+            font-size: 1.2em;
+            color: #000; /* Makes p black */
+
+        }
+        .hero button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        .hero button:hover {
+            background-color: #333;
+        }
+        /* Product Section */
+        .products {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .product-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .product {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 250px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .product button {
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .product button:hover {
+            background-color: #333;
+        }
+        
+        /* Footer Section */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000;
+            color: #fff;
+            margin-top: 20px;
+        }
+        
+        /* Owl Carousel */
+        .owl-carousel .item {
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+        }
+        .carousel-content {
+            text-align: center;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #000;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            border: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        #back-to-top:hover {
+            opacity: 1;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #fff;
+            transition: color 0.3s;
+        }
+        .menu-icon:hover {
+            color: #ccc;
+        }
+    
+        @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                width: 100%;
+                top: 0;
+                left: 0;
+                background: #000;
+                z-index: 1000;
+            }
+            nav ul {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #000;
+                display: none;
+            }
+            nav ul.show {
+                display: flex;
+            }
+            .menu-icon {
+                display: block;
+                position: absolute;
+                top: 15px;
+                right: 20px;
+                z-index: 1001;
+            }
+        }
+        .follow-us {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .follow-us h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .social-icons a img {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s;
+        }
+        .social-icons a:hover img {
+            transform: scale(1.2);
+        }
+        
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="logo">HeineKrest</div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="Heinekrest.com.html">Home</a></li>
+                    <li><a href="women.html">Women</a></li>
+                    <li><a href="new-arrivals.html">New Arrivals</a></li>
+                    <li><a href="sale.html">Sale</a></li>
+                    <li><a href="cart.html" id="cart-link">Cart (0)</a></li>
+                </ul>
+            </nav>
+        </header>
+
+    <section class="products">
+        <h2>Men's Collection</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="men1.jpg" alt="Men's Jacket">
+                <h3>Men's Jacket</h3>
+                <p>$80.00</p>
+                <button class="add-to-cart" data-name="Men's Jacket" data-price="80">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="men2.jpg" alt="Men's Sneakers">
+                <h3>Men's Sneakers</h3>
+                <p>$120.00</p>
+                <button class="add-to-cart" data-name="Men's Sneakers" data-price="120">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 HeineKrest. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+
+<style>/* Reset default margins and paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Header styling */
+        header {
+            position: fixed;
+            top: -60px; /* Adjust based on header height */
+            left: 0;
+            width: 100%;
+            height: 60px; /* Header height */
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            transition: top 0.20s ease-in-out;
+            z-index: 1000;
+        }
+        
+        /* Visible area to detect hover */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 90px; /* Hover detection area height */
+            background: transparent;
+        }
+        
+        /* Main content styling */
+        main {
+            padding-top: 60px; /* Space to prevent content from being hidden under the header */
+        }
+        
+        /* Show header on hover */
+        header:hover {
+            top: 0;
+        }
+        @font-face {
+    font-family: 'Chomsky',  serif;;
+    src: url('fonts/Chomsky.ttf') format('truetype');
+}
+
+.logo {
+    font-family: 'Chomsky', serif;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+header .logo {
+    font-size: 60px; /* Makes the HeineKrest logo bigger */
+    font-family: 'Chomsky', serif;
+    font-weight: normal; /* Ensures the font isn’t bold */
+}
+
+header .logo {
+    letter-spacing: -1px; /* Reduces spacing for a cleaner look */
+}
+
+
+
+        </style>
+        
+        <script>let lastScrollTop = 0;
+            const header = document.getElementById('header');
+            
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop) {
+                    // Scrolling down
+                    header.style.top = '-60px'; // Hide header
+                } else {
+                    // Scrolling up
+                    header.style.top = '0';
+                }
+                lastScrollTop = scrollTop;
+            });
+            </script>
+
+    <style>/* Header Styling */
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        
+        /* Logo Styling */
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        /* Theme Toggle Styling */
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+        
+        .theme-switch-label {
+            margin-left: 8px;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        /* Hide default checkbox */
+        #theme-switch {
+            display: none;
+        }
+        
+        /* Custom toggle appearance */
+        .theme-switch-label::before {
+            content: '';
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 10px;
+            position: relative;
+            transition: background-color 0.3s;
+        }
+        
+        .theme-switch-label::after {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            transition: transform 0.3s;
+        }
+        
+        /* Toggle ON */
+        #theme-switch:checked + .theme-switch-label::before {
+            background-color: #666;
+        }
+        
+        #theme-switch:checked + .theme-switch-label::after {
+            transform: translateX(20px);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .theme-toggle {
+                position: absolute;
+                top: 15px;
+                right: 60px; /* Adjust based on your design */
+            }
+        }
+        </style>
+
+<script>
+    const themeSwitch = document.getElementById('theme-switch');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+
+    document.body.classList.add(currentTheme);
+
+    themeSwitch.checked = currentTheme === 'dark';
+
+    themeSwitch.addEventListener('change', () => {
+        const theme = themeSwitch.checked ? 'dark' : 'light';
+        document.body.className = theme;
+        localStorage.setItem('theme', theme);
+    });
+</script>
+
+<style>/* Light Theme (default) */
+    body.light {
+        background-color: #f5f5f5;
+        color: #333;
+    }
+    
+    /* Dark Theme */
+    body.dark {
+        background-color: #333;
+        color: #f5f5f5;
+    }
+    
+    /* Additional styling for other elements */
+    body.dark header {
+        background-color: #111;
+    }
+    
+    body.dark .product {
+        background-color: #444;
+    }
+    
+    body.dark .product button {
+        background-color: #222;
+        color: #fff;
+    }
+
+    
+    /* Continue with other elements as needed */
+    </style>
+
+
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('show');
+    }
+
+    
